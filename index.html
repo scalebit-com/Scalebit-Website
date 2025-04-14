@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scalebit AB - Software Engineering Consultancy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>Scalebit<span>AB</span></h1>
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Scaling Your Digital Potential</h1>
+                    <p>Expert software engineering consultancy helping businesses build scalable, robust solutions.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                        <a href="#services" class="btn btn-secondary">Our Services</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="code-block">
+                        <pre>
+<code>function scaleYourBusiness() {
+  const solutions = {
+    cloud: implement('cloud-native'),
+    architecture: design('scalable'),
+    development: code('clean')
+  };
+  
+  return success(solutions);
+}</code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                    <p>Comprehensive software engineering solutions tailored to your needs</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Custom Software Development</h3>
+                        <p>Bespoke solutions built with cutting-edge technologies to address your unique business challenges.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Cloud Architecture</h3>
+                        <p>Scalable, secure cloud infrastructure designed for optimal performance and reliability.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-sitemap"></i>
+                        <h3>System Integration</h3>
+                        <p>Seamless integration of your existing systems with new technologies for enhanced efficiency.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Development</h3>
+                        <p>Cross-platform mobile applications that deliver exceptional user experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About Scalebit AB</h2>
+                    <p>Your trusted partner in software innovation</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Scalebit AB is a leading software engineering consultancy headquartered in Sweden. With a team of experienced engineers and consultants, we help businesses navigate the complex landscape of digital transformation.</p>
+                        <p>Our approach combines technical excellence with a deep understanding of business needs, ensuring that the solutions we deliver drive real value for our clients.</p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <h3>150+</h3>
+                                <p>Projects Completed</p>
+                            </div>
+                            <div class="stat">
+                                <h3>50+</h3>
+                                <p>Happy Clients</p>
+                            </div>
+                            <div class="stat">
+                                <h3>15+</h3>
+                                <p>Years Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Projects</h2>
+                    <p>Some of our best work that showcases our expertise</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image placeholder"></div>
+                        <div class="project-info">
+                            <h3>Cloud Migration Platform</h3>
+                            <p>Enterprise-scale cloud migration solution for a multinational corporation.</p>
+                            <div class="tech-stack">
+                                <span>AWS</span>
+                                <span>Kubernetes</span>
+                                <span>Terraform</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image placeholder"></div>
+                        <div class="project-info">
+                            <h3>IoT Analytics Dashboard</h3>
+                            <p>Real-time monitoring and analytics for industrial IoT deployments.</p>
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image placeholder"></div>
+                        <div class="project-info">
+                            <h3>Fintech Payment Solution</h3>
+                            <p>Secure, scalable payment processing platform with blockchain integration.</p>
+                            <div class="tech-stack">
+                                <span>Java</span>
+                                <span>Spring Boot</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Get in Touch</h2>
+                    <p>Ready to discuss your project? Contact us today.</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Stockholm, Sweden</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>info@scalebit.com</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>+46 123 456 789</p>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Scalebit<span>AB</span></h2>
+                    <p>Scaling your digital potential</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Custom Software Development</li>
+                        <li>Cloud Architecture</li>
+                        <li>System Integration</li>
+                        <li>Mobile Development</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Scalebit AB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
