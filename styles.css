@@ -2,7 +2,7 @@
 :root {
     --primary-color: #3498db;
     --secondary-color: #2ecc71;
-    --dark-bg: #121212;
+    --dark-bg: #040404;
     --dark-surface: #1e1e1e;
     --dark-text: #ffffff;
     --light-bg: #ffffff;
@@ -184,7 +184,9 @@ nav {
 .hero {
     display: flex;
     align-items: center;
-    min-height: calc(100vh - 80px);
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
 }
 
 .hero .container {
@@ -194,8 +196,12 @@ nav {
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
 }
 
 .hero-content h1 {
@@ -206,7 +212,6 @@ nav {
     overflow: hidden;
     white-space: pre-line; /* Ensures \n is respected for line breaks */
 }
-
 
 .hero-content p {
     font-size: 1.2rem;
@@ -257,9 +262,15 @@ nav {
 }
 
 .hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
+    width: 600px; /* Increased size to make the image larger */
+    height: 600px; /* Ensures the image is square */
+    object-fit: cover; /* Ensures the image scales properly */
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    font-size: 1.5rem;
+    color: var(--light-text);
 }
 
 .code-block {
