@@ -1,6 +1,6 @@
 /* General Styles */
 :root {
-    --primary-color: #3498db;
+    --primary-color: #20d520; /* Light green */
     --secondary-color: #2ecc71;
     --dark-bg: #040404;
     --dark-surface: #1e1e1e;
@@ -182,10 +182,11 @@ nav {
 
 /* Hero Section */
 .hero {
+    margin-top: 3%;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80%; /* Adjusted to percentage for easier readability */
     text-align: center;
 }
 
@@ -196,7 +197,6 @@ nav {
 }
 
 .hero-content {
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -214,9 +214,20 @@ nav {
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 3.5rem; /* Increased from 1.2rem */
     margin-bottom: 30px;
-    color: #777;
+    color: #d1d1d1;
+}
+
+.hero-content p.hero-text {
+    color: #ffffff; /* Made text whiter */
+    margin-bottom: 10px; /* Reduced spacing to make the text closer */
+}
+
+.hero-content p.hero-subtext {
+    font-size: 2rem; /* Made the new text smaller */
+    color: #ffffff; /* Made text whiter */
+    margin-top: 0; /* Removed extra spacing */
 }
 
 .dark-mode .hero-content p {
@@ -226,6 +237,7 @@ nav {
 .hero-buttons {
     display: flex;
     gap: 15px;
+    justify-content: center;
 }
 
 .btn {
@@ -265,11 +277,11 @@ nav {
     width: 600px; /* Increased size to make the image larger */
     height: 600px; /* Ensures the image is square */
     object-fit: cover; /* Ensures the image scales properly */
-    margin-bottom: 20px;
+    margin-bottom: 3%; /* Adjusted to percentage for easier readability */
 }
 
 .hero-text {
-    font-size: 1.5rem;
+    font-size: 2rem; /* Made text bigger */
     color: var(--light-text);
 }
 
@@ -296,7 +308,7 @@ nav {
 
 /* Services Section */
 .services {
-    background-color: var(--light-surface);
+    background-color: #1c1c1c; /* Darker grey */
     transition: var(--transition);
 }
 
@@ -574,7 +586,7 @@ nav {
 
 /* Footer */
 footer {
-    background-color: var(--light-surface);
+    background-color: #1a1a1a; /* Darker grey */
     padding: 60px 0 20px;
     transition: var(--transition);
 }

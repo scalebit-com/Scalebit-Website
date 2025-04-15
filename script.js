@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Active navigation link based on scroll position
+    // Ensure 'Home' is active when scrolled to the top
     window.addEventListener('scroll', function() {
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-links a');
@@ -96,6 +97,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 current = section.getAttribute('id');
             }
         });
+        
+        if (pageYOffset === 0) {
+            current = 'home';
+        }
         
         navLinks.forEach(link => {
             link.classList.remove('active');
