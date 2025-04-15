@@ -222,12 +222,20 @@ nav {
 .hero-content p.hero-text {
     color: #ffffff; /* Made text whiter */
     margin-bottom: 10px; /* Reduced spacing to make the text closer */
+    min-height: 4rem; /* Set fixed height to prevent layout shifts */
+    width: 100%; /* Full width container */
+    display: block; /* Block display */
+    text-align: center; /* Changed from left to center */
+    white-space: nowrap; /* Keep text on one line */
+    overflow: hidden; /* Hide overflow */
 }
 
 .hero-content p.hero-subtext {
     font-size: 2rem; /* Made the new text smaller */
     color: #ffffff; /* Made text whiter */
     margin-top: 0; /* Removed extra spacing */
+    text-align: center; /* Ensure text is centered */
+    width: 100%; /* Full width */
 }
 
 .dark-mode .hero-content p {

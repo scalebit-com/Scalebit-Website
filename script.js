@@ -1,4 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Typing animation for hero text
+    const textElement = document.querySelector('.hero-text');
+    if (textElement) {
+        const text = "Scale your digital potential";
+        const characters = text.split('');
+        
+        // Prepare the container with invisible spans for each character
+        textElement.innerHTML = characters.map(char => 
+            `<span class="char" style="visibility: hidden;">${char}</span>`
+        ).join('');
+        
+        // Get all character spans
+        const charSpans = textElement.querySelectorAll('.char');
+        
+        // Start typing after a delay
+        setTimeout(function() {
+            let index = 0;
+            
+            function typeEffect() {
+                if (index < charSpans.length) {
+                    // Make current character visible (instead of adding new elements)
+                    charSpans[index].style.visibility = 'visible';
+                    index++;
+                    setTimeout(typeEffect, 100);
+                }
+            }
+            
+            typeEffect();
+        }, 500);
+    }
+    
     // Theme toggle functionality removed - site is dark mode only
     
     // Mobile Navigation

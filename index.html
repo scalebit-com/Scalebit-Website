@@ -39,8 +39,10 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <img src="scalebit_logo.jpg" alt="Scalebit Logo" class="hero-image">
-                <p class="hero-text">Scale your digital potential </p>
-                <p class="hero-subtext">A software engineering company</p>
+                <div style="width: 100%; text-align: center;">
+                    <p class="hero-text"></p><!-- Empty paragraph for typing effect -->
+                    <p class="hero-subtext">A software engineering company</p>
+                </div>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Get in Touch</a>
                     <a href="#services" class="btn btn-secondary">Our Services</a>
@@ -95,7 +97,7 @@
                                 <p>Happy Clients</p>
                             </div>
                             <div class="stat">
-                                <h3>15+</h3>
+                                <h3>15+</</h3>
                                 <p>Years Experience</p>
                             </div>
                         </div>
@@ -169,23 +171,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const textElement = document.querySelector('.hero-content h1');
-            const text = "Scaling Your\nDigital Potential"; // Added \n for line break before 'Digital'
-            let index = 0;
-
-            function typeEffect() {
-                if (index < text.length) {
-                    textElement.textContent += text.charAt(index);
-                    index++;
-                    setTimeout(typeEffect, 100); // Adjust typing speed here
-                }
-            }
-
-            textElement.textContent = ""; // Clear initial text
-            typeEffect();
-        });
-    </script>
 </body>
 </html>
