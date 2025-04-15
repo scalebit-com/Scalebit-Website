@@ -257,7 +257,7 @@ nav {
 }
 
 .btn-primary:hover {
-    background-color: #2980b9;
+    background-color: #1ab91a; /* Changed from blue to a darker green */
     transform: translateY(-3px);
 }
 
@@ -308,12 +308,12 @@ nav {
 
 /* Services Section */
 .services {
-    background-color: #1c1c1c; /* Darker grey */
+    background-color: #121212; /* Darker than before but lighter than main bg */
     transition: var(--transition);
 }
 
 .dark-mode .services {
-    background-color: var(--dark-surface);
+    background-color: #121212;
 }
 
 .services-grid {
@@ -584,13 +584,13 @@ nav {
 
 /* Footer */
 footer {
-    background-color: #1a1a1a; /* Darker grey */
+    background-color: #101010; /* Darker than before but lighter than main bg */
     padding: 60px 0 20px;
     transition: var(--transition);
 }
 
 .dark-mode footer {
-    background-color: var(--dark-surface);
+    background-color: #101010;
 }
 
 .footer-content {

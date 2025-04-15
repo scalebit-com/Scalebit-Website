@@ -1,36 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Theme Toggle Functionality
-    const themeToggle = document.getElementById('theme-toggle-btn');
-    const themeIcon = themeToggle.querySelector('i');
-    
-    // Check for saved theme preference or use device preference
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    const savedTheme = localStorage.getItem('theme');
-    
-    if (savedTheme === 'light' || (!savedTheme && !prefersDarkScheme.matches)) {
-        document.body.classList.remove('dark-mode');
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-    } else {
-        document.body.classList.add('dark-mode');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-    }
-    
-    themeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode');
-        
-        // Update icon
-        if (document.body.classList.contains('dark-mode')) {
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-            localStorage.setItem('theme', 'light');
-        }
-    });
+    // Theme toggle functionality removed - site is dark mode only
     
     // Mobile Navigation
     const hamburger = document.querySelector('.hamburger');
@@ -81,27 +50,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Active navigation link based on scroll position
-    // Ensure 'Home' is active when scrolled to the top
+    // Active navigation link based on scroll position with special case for bottom of page
     window.addEventListener('scroll', function() {
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-links a');
         
         let current = '';
         
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
+        // Special case for bottom of page - if we're close to bottom, activate Contact
+        if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100) {
+            current = 'contact';
+        } else {
+            // Normal section detection
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
             
-            if (pageYOffset >= sectionTop - 100) {
-                current = section.getAttribute('id');
+            // Special case for top of page
+            if (pageYOffset === 0) {
+                current = 'home';
             }
-        });
-        
-        if (pageYOffset === 0) {
-            current = 'home';
         }
         
+        // Update active links
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href').substring(1) === current) {
