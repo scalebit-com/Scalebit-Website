@@ -491,6 +491,15 @@ nav {
 }
 
 /* Contact Section */
+.contact {
+    background-color: #121212; /* Same grey as Services section */
+    transition: var(--transition);
+}
+
+.dark-mode .contact {
+    background-color: #121212;
+}
+
 .contact-content {
     display: flex;
     justify-content: center; /* Center horizontally */
@@ -584,13 +593,13 @@ nav {
 
 /* Footer */
 footer {
-    background-color: #101010; /* Darker than before but lighter than main bg */
+    background-color: var(--dark-bg); /* Changed to match the About section */
     padding: 60px 0 20px;
     transition: var(--transition);
 }
 
 .dark-mode footer {
-    background-color: #101010;
+    background-color: var(--dark-bg);
 }
 
 .footer-content {
