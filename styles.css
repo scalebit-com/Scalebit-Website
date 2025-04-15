@@ -265,7 +265,8 @@ nav {
 .code-block {
     background-color: var(--dark-surface);
     border-radius: var(--border-radius);
-    padding: 20px;
+    margin-left: 20px;
+    padding: 26px;
     width: 100%;
     max-width: 500px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
