@@ -180,13 +180,13 @@ nav {
     background-color: var(--dark-text);
 }
 
-/* Hero Section */
+/* Hero Section - Reduced height to bring services section closer */
 .hero {
     margin-top: 3%;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80%; /* Adjusted to percentage for easier readability */
+    height: 90vh; /* Reduced from 80% to make services closer */
     text-align: center;
 }
 
@@ -201,7 +201,7 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100vh;
+    height: 80vh; /* Reduced from 100vh */
 }
 
 .hero-content h1 {
@@ -492,9 +492,9 @@ nav {
 
 /* Contact Section */
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
 .contact-form form {
@@ -537,51 +537,49 @@ nav {
     border-color: var(--primary-color);
 }
 
+/* Fix contact info centering - make items display horizontally */
 .contact-info {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row; /* Changed from column to row */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 30px; /* Space between items */
 }
 
 .info-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
+    justify-content: center;
+    margin-bottom: 20px;
+    text-align: center;
+    /* Removed width: 100% to allow items to be side by side */
 }
 
 .info-item i {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--primary-color);
-    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
 .social-links {
-    margin-top: 30px;
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 30px; /* Increased space between icons */
 }
 
 .social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: var(--light-surface);
+    font-size: 2rem; /* Increased icon size */
     color: var(--primary-color);
-    border-radius: 50%;
     transition: var(--transition);
-    text-decoration: none;
-}
-
-.dark-mode .social-links a {
-    background-color: var(--dark-surface);
 }
 
 .social-links a:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 }
 
 /* Footer */
