@@ -202,7 +202,11 @@ nav {
     font-size: 3.5rem;
     line-height: 1.2;
     margin-bottom: 20px;
+    height: 8.2rem; /* Låser höjden */
+    overflow: hidden;
+    white-space: pre-line; /* Ensures \n is respected for line breaks */
 }
+
 
 .hero-content p {
     font-size: 1.2rem;
