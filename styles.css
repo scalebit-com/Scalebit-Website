@@ -613,13 +613,13 @@ nav {
 
 /* Footer */
 footer {
-    background-color: var(--dark-bg); /* Changed to match the About section */
+    background-color: #121212; /* Changed to match the Services section */
     padding: 60px 0 20px;
     transition: var(--transition);
 }
 
 .dark-mode footer {
-    background-color: var(--dark-bg);
+    background-color: #121212;
 }
 
 .footer-content {

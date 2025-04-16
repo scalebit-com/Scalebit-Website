@@ -99,9 +99,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         let current = '';
         
-        // Special case for bottom of page - if we're close to bottom, activate Contact
+        // Special case for bottom of page - if we're close to bottom, activate About
         if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100) {
-            current = 'contact';
+            current = 'about';
         } else {
             // Normal section detection
             sections.forEach(section => {
