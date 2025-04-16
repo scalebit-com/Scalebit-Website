@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Theme toggle functionality removed - site is dark mode only
     
-    // Mobile Navigation
+    // Mobile Navigation - improved with proper animation
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
@@ -52,6 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Also close mobile menu when clicking outside the menu
+    document.addEventListener('click', function(e) {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target) && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    });
+    
     // Form submission
     const contactForm = document.querySelector('.contact-form form');
     if (contactForm) {
@@ -66,15 +74,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Smooth scrolling for anchor links
+    // Smooth scrolling for anchor links with improved mobile experience
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
+                // Adjust offset based on screen size
+                const offset = window.innerWidth <= 768 ? 60 : 80;
+                
                 window.scrollTo({
-                    top: target.offsetTop - 80, // Offset for header height
+                    top: target.offsetTop - offset, // Adjusted offset for mobile
                     behavior: 'smooth'
                 });
             }
