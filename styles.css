@@ -180,17 +180,17 @@ nav {
     background-color: var(--dark-text);
 }
 
-/* Hero Section - Reduced height to bring services section closer */
+/* Hero Section - Full viewport height to hide services */
 .hero {
-    margin-top: 3%;
+    margin-top: 0; /* Removed the top margin */
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh; /* Reduced from 80% to make services closer */
+    height: 100vh; /* Changed to 100vh to cover full viewport height */
     text-align: center;
-    padding-bottom: 30px; /* Add some padding at bottom */
-    min-height: auto; /* Allow content to determine height */
-    max-height: 800px; /* Limit maximum height */
+    padding-bottom: 0; /* Removed bottom padding */
+    min-height: 100vh; /* Set minimum height to full viewport */
+    max-height: none; /* Removed max height restriction */
 }
 
 .hero .container {
@@ -287,10 +287,16 @@ nav {
 
 .hero-image {
     width: 100%; /* Changed from fixed width to responsive percentage */
-    max-width: 400px; /* Added max-width for larger screens */
+    max-width: 500px; /* Increased from 400px to 500px for bigger display on desktop */
     height: auto; /* Changed from fixed height to auto to maintain aspect ratio */
     object-fit: cover; /* Ensures the image scales properly */
     margin-bottom: 3%; /* Adjusted to percentage for easier readability */
+}
+
+@media (min-width: 1200px) {
+    .hero-image {
+        max-width: 600px; /* Even larger on very large screens */
+    }
 }
 
 .hero-text {
@@ -387,6 +393,7 @@ nav {
 
 .about-text {
     flex: 1;
+    text-align: center; /* Center the text */
 }
 
 .about-text p {
@@ -693,14 +700,9 @@ footer {
     }
     
     .hero {
-        height: auto; /* Change from fixed height to auto on mobile */
-        min-height: auto; /* Remove minimum height constraint */
-        padding-bottom: 40px; /* Add more padding at the bottom */
-    }
-    
-    .hero-content {
-        margin-bottom: 20px; /* Reduced from 50px for better spacing */
-        height: auto; /* Ensure auto height on mobile */
+        height: 100vh; /* Ändrade från auto till 100vh för att täcka hela skärmen */
+        min-height: 100vh; /* Ange minimum höjd till full viewport */
+        padding-bottom: 0; /* Ta bort padding i botten */
     }
     
     .about-content {
