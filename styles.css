@@ -188,6 +188,9 @@ nav {
     justify-content: center;
     height: 90vh; /* Reduced from 80% to make services closer */
     text-align: center;
+    padding-bottom: 30px; /* Add some padding at bottom */
+    min-height: auto; /* Allow content to determine height */
+    max-height: 800px; /* Limit maximum height */
 }
 
 .hero .container {
@@ -689,14 +692,15 @@ footer {
         text-align: center;
     }
     
+    .hero {
+        height: auto; /* Change from fixed height to auto on mobile */
+        min-height: auto; /* Remove minimum height constraint */
+        padding-bottom: 40px; /* Add more padding at the bottom */
+    }
+    
     .hero-content {
         margin-bottom: 20px; /* Reduced from 50px for better spacing */
         height: auto; /* Ensure auto height on mobile */
-    }
-    
-    .hero-buttons {
-        justify-content: center;
-        flex-wrap: wrap; /* Allow buttons to wrap on very small screens */
     }
     
     .about-content {
