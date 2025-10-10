@@ -10,6 +10,10 @@
     --light-text: #333333;
     --border-radius: 8px;
     --transition: all 0.3s ease;
+    /* Fluid typography */
+    --hero-text-size: clamp(1.8rem, 4vw + 1rem, 3.5rem);
+    --hero-subtext-size: clamp(1.1rem, 2.2vw + 0.6rem, 2rem);
+    --section-title-size: clamp(1.6rem, 2.5vw + 0.8rem, 2.5rem);
 }
 
 * {
@@ -47,7 +51,7 @@ section {
 }
 
 .section-header h2 {
-    font-size: 2.5rem;
+    font-size: var(--section-title-size);
     margin-bottom: 15px;
     position: relative;
     display: inline-block;
@@ -92,7 +96,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 8px 0; /* Minskat för att få upp innehåll */
 }
 
 .logo h1 {
@@ -182,15 +186,13 @@ nav {
 
 /* Hero Section - Full viewport height to hide services */
 .hero {
-    margin-top: 0; /* Removed the top margin */
+    margin-top: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Flytta innehåll uppåt istället för centrerat */
     justify-content: center;
-    height: 100vh; /* Changed to 100vh to cover full viewport height */
+    min-height: 100dvh; /* Behåll höjd för hero men starta högre upp */
     text-align: center;
-    padding-bottom: 0; /* Removed bottom padding */
-    min-height: 100vh; /* Set minimum height to full viewport */
-    max-height: none; /* Removed max height restriction */
+    padding: 0; /* Ingen padding ovanför bilden */
 }
 
 .hero .container {
@@ -202,19 +204,19 @@ nav {
 .hero-content {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
-    height: auto; /* Changed from fixed height to auto for better mobile responsiveness */
-    padding: 20px 0; /* Added padding for spacing */
+    height: auto;
+    padding: 0; /* Tar bort vertikal padding */
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    height: 8.2rem; /* Låser höjden */
+    line-height: 1.15;
+    margin-bottom: 10px; /* Mindre avstånd till nästa rad */
+    height: 6.5rem; /* Lägre låsning för kompaktare layout */
     overflow: hidden;
-    white-space: pre-line; /* Ensures \n is respected for line breaks */
+    white-space: pre-line;
 }
 
 .hero-content p {
@@ -224,22 +226,24 @@ nav {
 }
 
 .hero-content p.hero-text {
-    color: #ffffff; /* Made text whiter */
-    margin-bottom: 10px; /* Reduced spacing to make the text closer */
-    min-height: 4rem; /* Set fixed height to prevent layout shifts */
-    width: 100%; /* Full width container */
-    display: block; /* Block display */
-    text-align: center; /* Changed from left to center */
-    white-space: nowrap; /* Keep text on one line */
-    overflow: hidden; /* Hide overflow */
+    color: #ffffff;
+    margin-bottom: 10px;
+    min-height: 3.2rem; /* Slightly reduced, will scale fluidly */
+    width: 100%;
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: var(--hero-text-size);
+    line-height: 1.1;
 }
 
 .hero-content p.hero-subtext {
-    font-size: 2rem; /* Made the new text smaller */
-    color: #ffffff; /* Made text whiter */
-    margin-top: 0; /* Removed extra spacing */
-    text-align: center; /* Ensure text is centered */
-    width: 100%; /* Full width */
+    font-size: var(--hero-subtext-size);
+    color: #ffffff;
+    margin-top: 0;
+    text-align: center;
+    width: 100%;
 }
 
 .dark-mode .hero-content p {
@@ -250,6 +254,7 @@ nav {
     display: flex;
     gap: 15px;
     justify-content: center;
+    margin-bottom: 60px; /* Extra luft mellan knappar och sektionen under */
 }
 
 .btn {
@@ -286,11 +291,11 @@ nav {
 }
 
 .hero-image {
-    width: 100%; /* Changed from fixed width to responsive percentage */
-    max-width: 500px; /* Increased from 400px to 500px for bigger display on desktop */
-    height: auto; /* Changed from fixed height to auto to maintain aspect ratio */
-    object-fit: cover; /* Ensures the image scales properly */
-    margin-bottom: 3%; /* Adjusted to percentage for easier readability */
+    width: min(100%, 600px);
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto 2rem;
+    display: block;
 }
 
 @media (min-width: 1200px) {
@@ -403,9 +408,10 @@ nav {
 
 .about-stats {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 40px;
     gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping to prevent overflow on medium viewports */
 }
 
 .stat {
@@ -698,11 +704,9 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    
     .hero {
-        height: 100vh; /* Ändrade från auto till 100vh för att täcka hela skärmen */
-        min-height: 100vh; /* Ange minimum höjd till full viewport */
-        padding-bottom: 0; /* Ta bort padding i botten */
+        padding-top: 0; /* Ingen padding även på mobil */
+        min-height: 100dvh;
     }
     
     .about-content {
@@ -717,13 +721,7 @@ footer {
         font-size: 2rem; /* Smaller font size for section headers on mobile */
     }
     
-    .hero-content p.hero-text {
-        font-size: 2.5rem; /* Smaller text size for mobile */
-    }
-    
-    .hero-content p.hero-subtext {
-        font-size: 1.5rem; /* Smaller subtext for mobile */
-    }
+    /* Inga extra font-size overrides behövs tack vare clamp() */
 }
 
 @media (max-width: 768px) {
@@ -785,10 +783,16 @@ footer {
         transform: translateY(-8px) rotate(-45deg);
     }
     
-    .about-stats {
-        flex-direction: column;
-    }
+    .about-stats { flex-direction: row; }
     
+
+/* Medium narrow devices: avoid cramped three-column stats */
+@media (max-width: 860px) {
+    .about-stats .stat { flex: 1 1 140px; }
+}
+@media (max-width: 640px) {
+    .about-stats .stat { flex: 1 1 100%; }
+}
     .contact-info {
         flex-direction: column; /* Stack contact info on mobile */
     }
@@ -801,19 +805,19 @@ footer {
         grid-template-columns: 1fr; /* Single column footer on mobile */
         text-align: center;
     }
+    section { padding: 60px 0; }
     
     .footer-links h3:after, 
     .footer-services h3:after {
         left: 50%;
         transform: translateX(-50%);
     }
+    .services-grid { gap: 20px; }
+    section { padding: 50px 0; }
 }
 
 @media (max-width: 480px) {
-    .hero-content p.hero-text {
-        font-size: 2rem; /* Even smaller text for very small screens */
-        white-space: normal; /* Allow text to wrap on very small screens */
-    }
+    .hero-content p.hero-text { white-space: normal; }
     
     .btn {
         padding: 10px 20px; /* Smaller buttons on mobile */
@@ -829,4 +833,6 @@ footer {
     .section {
         padding: 60px 0; /* Less padding on mobile */
     }
+    section { padding: 45px 0; }
+    .services-grid { gap: 16px; }
 }
